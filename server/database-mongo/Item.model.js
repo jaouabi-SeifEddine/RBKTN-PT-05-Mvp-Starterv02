@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const db = require("./index.js");
 
 const itemSchema = new mongoose.Schema({
-  description: String,
-  quantity: Number,
+  title: String,
+  article: String,
+  date: Date
 });
 
 const Item = mongoose.model("Item", itemSchema);

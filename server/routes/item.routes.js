@@ -1,6 +1,9 @@
 const router = require('express').Router();
-const itemController = require("../controllers/item.controller");
+const { selectAll, post, update, deleteOne } = require("../controllers/item.controller.js")
 
-router.get("/", itemController.selectAll);
+router.get("/", selectAll);
+router.post("/post", post)
+router.put("/:id", update)
+router.delete("/:id", deleteOne)
 
 module.exports = router;
