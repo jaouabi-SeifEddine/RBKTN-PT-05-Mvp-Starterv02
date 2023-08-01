@@ -1,13 +1,12 @@
 import React from "react";
 import ListItem from "./ListItem.jsx";
 
-const List = (props) => (
+const List = ({items, refresh, setRefresh}) => (
   <div>
-    <h4> List Component </h4>
-    There are {props.items.length} items.
-    {props.items.map((item, index) => (
+    <h2 id="work"> workout exercices </h2>
+    {items.map((item, index) => (
       <div key={index}>
-        <ListItem item={item} />
+        <ListItem item={item} theRefresh={refresh} theSetRefresh={setRefresh} />
       </div>
     ))}
   </div>

@@ -1,0 +1,30 @@
+#toBorder {
+    border-style: solid;
+    right: 50px;
+    border-width: 0.1cm;
+    border-color: gray;
+    width: 300px; 
+    padding: 20px;
+    border-radius: 250% / 10% 40%;
+    border-style:groove;
+    background-color: rgb(57, 16, 101);
+}
+body{
+  background-image:url("gym.jpg");
+}
+
+#track{
+    text-align: center;
+    font-style:italic;
+    font-weight: bold;
+    color:crimson;
+}
+#work{
+    font-weight: bold;
+    color: turquoise;
+}
+.mf{
+    font-style: oblique;
+    font-weight: bold;
+    color:whitesmoke;
+}

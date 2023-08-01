@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 const db = require("./index.js");
 
 const itemSchema = new mongoose.Schema({
-  title: String,
-  article: String,
-  date: Date
+  exercice: String,
+  sets: Number,
+  reps: Number,
+  weight: Number
 });
 
-const Item = mongoose.model("Item", itemSchema);
+const item = mongoose.model("item", itemSchema);
 
-module.exports = Item;
+module.exports = item;
