@@ -14,7 +14,7 @@ const ListItem = ({item, theRefresh, theSetRefresh}) => {
     }
 
     const updateSets = (id) =>{
-      const mod = document.getElementsByClassName('change').value
+      const mod = document.getElementById('set').value
       axios.put(`http://localhost:3000/api/items/${id}`, {sets : mod})
       .then (res =>{
         theSetRefresh(!theRefresh)
@@ -25,7 +25,7 @@ const ListItem = ({item, theRefresh, theSetRefresh}) => {
       })
     }
     const updateReps = (id) =>{
-      const mod = document.getElementsByClassName('change').value
+      const mod = document.getElementById('rep').value
       axios.put(`http://localhost:3000/api/items/${id}`, {reps : mod})
       .then (res =>{
         theSetRefresh(!theRefresh)
@@ -37,7 +37,7 @@ const ListItem = ({item, theRefresh, theSetRefresh}) => {
       })
     }
     const updateWeight = (id) =>{
-      const mod = document.getElementsByClassName('change').value
+      const mod = document.getElementById('wei').value
       axios.put(`http://localhost:3000/api/items/${id}`, {weight : mod})
       .then (res =>{
         theSetRefresh(!theRefresh)
@@ -56,11 +56,11 @@ const ListItem = ({item, theRefresh, theSetRefresh}) => {
     <button type ="button" onClick={()=>deleteOne(item._id)}>delete</button>
     <p className='mf'> i want to see that weight increase next week champ </p>
     <p className='mf'> you can emplement those changes down here</p>
-    <input className='change' type='text' placeholder='put in the new sets record '/><button type='button' onClick={() =>updateSets(item._id)}>update</button>
+    <input id='set' type='text' placeholder='put in the new sets record '/><button type='button' onClick={() =>updateSets(item._id)}>update</button>
     <br></br>
-    <input className='change' type='text' placeholder='put in the new reps record '/><button type='button'  onClick={() =>updateReps(item._id)}>update</button>
+    <input id='rep' type='text' placeholder='put in the new reps record '/><button type='button'  onClick={() =>updateReps(item._id)}>update</button>
     <br></br>
-    <input className='change' type='text' placeholder='put in the new weight record '/><button type='button'  onClick={() =>updateWeight(item._id)}>update</button>
+    <input id='wei' type='text' placeholder='put in the new weight record '/><button type='button'  onClick={() =>updateWeight(item._id)}>update</button>
     <br></br>
     
   </div>

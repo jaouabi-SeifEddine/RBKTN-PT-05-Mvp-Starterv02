@@ -46,4 +46,5 @@ const deleteOnes = async function (req, res) {
 }
 
 
+
 module.exports = { selectAll, post, update, deleteOnes };

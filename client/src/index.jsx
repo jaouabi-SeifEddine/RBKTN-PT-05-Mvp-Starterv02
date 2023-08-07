@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
+// import { Cloudinary } from '@cloudinary/url-gen/index.js'
 import axios from 'axios'
 import List from './components/List.jsx'
+// import { image } from '@cloudinary/url-gen/qualifiers/source.js'
+
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -11,6 +13,27 @@ const App = () => {
   const [sets, setSets] = useState(0)
   const [reps, setReps] = useState(0)
   const [weight, setWeight] = useState(0)
+
+  // const prjCld = new Cloudinary({
+  //   cloud : {
+  //     cloudName: dglagtmn9
+  //   }
+  // })
+  // const formData = new FormData()
+  // formData.append("api_key", '')
+  // formData("file", image)
+  // formData.append("public_id", "progress")
+  // formData.append("upload_preset", uploadPreset)
+//   const uploadPhoto = () =>{ 
+//   axios
+//   .post("CLOUDINARY_URL=cloudinary://927252493869115:edP3BRRKJosmb385OqErLlRpghg@dglagtmn9", formData)
+//   .then((res) =>{
+//     console.log(res);
+//   })
+//   .catch((err)=>{
+//     console.error(err)
+//   })
+// }
  
   useEffect(() => {
     axios.get("http://localhost:3000/api/items/")
@@ -46,6 +69,7 @@ const App = () => {
         <input type='text' placeholder='add sets' onChange={(e)=>setSets(e.target.value)}/><br></br>
         <input type='text' placeholder='add weight' onChange={(e)=>setWeight(e.target.value)}/><br></br>
         <button type='botton' onClick={()=>addOne(exercice, sets, reps, weight)}>add workout</button>
+        {/* <p>need to keep track of your progress? make sure to upload your progress photos </p><button type='button' onClick={()=>uploadPhoto}>upload</button> */}
       </div>
     </div>
   )
